@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image to QR</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- QRCode library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Image to QR</h1>
+        <p>Upload any image and instantly generate a QR code that encodes it.</p>
+      </header>
+
+      <section class="card">
+        <div class="card-inner">
+          <div class="upload-area" id="upload-area">
+            <input
+              type="file"
+              id="image-input"
+              accept="application/pdf"
+              aria-label="Upload a PDF to generate a QR code"
+            />
+            <label for="image-input" class="upload-label">
+              <span class="upload-icon">⬆</span>
+              <span class="upload-text-main">Drop a PDF here or click to browse</span>
+              <span class="upload-text-sub">PDF only — your file stays in your browser</span>
+            </label>
+          </div>
+
+          <div class="url-area">
+            <div class="url-label-row">
+              <label for="pdf-url" class="url-label">Or paste a link to your PDF</label>
+              <span class="url-hint">Best for large PDFs stored on Drive, Dropbox, etc.</span>
+            </div>
+            <div class="url-input-row">
+              <input
+                type="url"
+                id="pdf-url"
+                placeholder="https://example.com/your-file.pdf"
+                autocomplete="off"
+              />
+              <button id="url-generate-btn" class="secondary-btn" type="button">
+                Generate QR
+              </button>
+            </div>
+          </div>
+
+          <div class="preview-qr-layout">
+            <div class="preview">
+              <h2>Preview</h2>
+              <div class="preview-box" id="preview-box">
+                <span class="preview-placeholder">PDF info will appear here</span>
+              </div>
+            </div>
+
+            <div class="qr-section">
+              <h2>QR Code</h2>
+              <div class="qr-box" id="qrcode">
+                <span class="preview-placeholder">QR for your PDF will appear here</span>
+              </div>
+              <button id="download-btn" class="primary-btn" disabled>
+                Download QR
+              </button>
+              <p class="hint">
+                Scan the QR to get a base64 version of your image. Large images may
+                create dense QR codes; smaller images work best.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <span>Built with pure HTML, CSS &amp; JS · Everything stays on your device</span>
+      </footer>
+    </main>
+  </body>
+</html>
+
+

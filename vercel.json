@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "image-pdf-qr",
+  "public": true,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    }
+  ]
+}
+
+
